@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function Step1() {
+export default function Step1(props) {
+    
+    const setStep1Data = props.setStep1Data;
+    const step1Data = props.step1Data;
+
     return (
         <div>
             <h4>Personal Info</h4>
@@ -8,7 +12,11 @@ export default function Step1() {
 
             <>
                 <label htmlFor=''>Name</label>
-                <input type='text' />
+                <input
+                    value={step1Data.name}
+                    onChange={(e) => setStep1Data({ ...step1Data, name: e.target.value })}
+                    type='text'
+                />
             </>
             <>
                 <label htmlFor=''>Email Address</label>

@@ -6,6 +6,13 @@ import Step2 from './steps/Step2';
 
 function App() {
     const [step, setStep] = useState(1);
+
+    const [step1Data, setStep1Data] = useState({
+        name: '',
+        email: '',
+        phoneNumber: '',
+    });
+
     return (
         <div className='app'>
             <img
@@ -14,8 +21,16 @@ function App() {
                 alt='background'
             />
             <div className='container'>
-                {step === 1 && <Step1 />}
+                {step === 1 && (
+                    <Step1
+                        step1Data={step1Data}
+                        setStep1Data={setStep1Data}
+                    />
+                )}
                 {step === 2 && <Step2 />}
+
+                {/* {step === 3 && <Step3 />}
+                {step === 4 && <Step4 />} */}
             </div>
 
             <div className='controls'>

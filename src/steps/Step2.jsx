@@ -1,6 +1,9 @@
 import React from 'react';
 
-export default function Step2() {
+export default function Step2(props) {
+
+  
+
     return (
         <div>
             <h4>Select your plan</h4>
