@@ -1,8 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 * {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
 }
 
 body {
@@ -15,22 +30,30 @@ body {
   width: 100%;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  background-color: hsl(231, 100%, 99%)
+  background-color: var(--magnolia)
 }
 
 .bg_mobile {
   width: 100%;
 }
 
-.container {
+.desktop-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--magnolia)
+}
+
+.mobile-container {
   position: absolute;
-  width: 80%;
-  height: 70vh;
+  width: 90%;
   background-color: white;
   border-radius: 12px;
-  top: 150px;
+  top: 100px;
   box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -41,3 +64,40 @@ body {
   right: 0;
   width: 100%;
 }
+
+.card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 12px 0;
+  color: var(--marine-blue);
+  font-size: 24px;
+}
+
+.sub-title {
+  color: var(--cool-gray);
+  line-height: 24px;
+  margin-bottom: 24px;
+  font-size: 16px;
+}
+
+.label {
+  color: var(--marine-blue);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.input {
+  height: 40px;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  padding: 0 12px;
+  margin-bottom: 16px;
+}
+
+
+/*Media Querries for desktop*/
+@media screen and (min-width: 900px) {}
