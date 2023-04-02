@@ -16,7 +16,7 @@ export default function Step1({ data, setData }) {
                 <input
                     className='input'
                     value={data.step1?.name}
-                    onChange={(e) => setData({ ...data, step1: { name: e.target.value } })}
+                    onChange={(e) => setData({ ...data, step1: { ...data.step1, name: e.target.value } })}
                     type='text'
                 />
             </>
@@ -31,7 +31,7 @@ export default function Step1({ data, setData }) {
                     className='input'
                     type='email'
                     value={data.step1?.email}
-                    onChange={(e) => setData({ ...data, step1: { email: e.target.value } })}
+                    onChange={(e) => setData({ ...data, step1: { ...data.step1, email: e.target.value } })}
                 />
             </>
             <>
@@ -45,7 +45,7 @@ export default function Step1({ data, setData }) {
                     className='input'
                     type='number'
                     value={data.step1?.phone}
-                    onChange={(e) => setData({ ...data, step1: { phone: e.target.value } })}
+                    onChange={(e) => setData({ ...data, step1: { ...data.step1, phone: e.target.value } })}
                 />
             </>
         </div>

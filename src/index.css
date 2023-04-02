@@ -7,8 +7,20 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 :root {
-  --marine-blue: hsl(213, 96%, 18%);
+  --marine-blue: #02295a;
   --purplish-blue: hsl(243, 100%, 62%);
   --pastel-blue: hsl(228, 100%, 84%);
   --light-blue: hsl(206, 94%, 87%);
@@ -18,6 +30,16 @@
   --light-gray: hsl(229, 24%, 87%);
   --magnolia: hsl(217, 100%, 97%);
   --alabaster: hsl(231, 100%, 99%);
+}
+
+button {
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 4px;
+  margin: 0 20px;
 }
 
 body {
@@ -60,9 +82,27 @@ body {
 .controls {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
+  background-color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.back-button {
+  color: var(--cool-gray);
+  background-color: transparent;
+}
+
+.next-button {
+  background-color: var(--marine-blue);
+  color: white;
+}
+
+.confirm-button {
+  background-color: var(--purplish-blue);
+  color: white;
 }
 
 .card {
@@ -84,6 +124,31 @@ body {
   font-size: 16px;
 }
 
+.selector {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  height: 100px;
+  padding: 0 16px;
+  position: relative;
+}
+
+
+.selector-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.selector-title {
+  font-weight: 500;
+  color: var(--marine-blue);
+}
+
+/* STEP1 */
 .label {
   color: var(--marine-blue);
   font-size: 12px;
@@ -96,8 +161,38 @@ body {
   border-radius: 4px;
   padding: 0 12px;
   margin-bottom: 16px;
+  outline: none
 }
 
+/* STEP2 */
+.time-frame-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  background-color: var(--magnolia);
+  gap: 20px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* STEP3 */
+.step3-selector input {
+  height: 16px;
+  width: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* STEP4 */
+.hr {
+  width: 100%;
+  height: 1px;
+  background-color: var(--light-gray);
+  margin: 24px 0 12px 0;
+}
 
 /*Media Querries for desktop*/
 @media screen and (min-width: 900px) {}
