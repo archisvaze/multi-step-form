@@ -14,11 +14,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
 :root {
   --marine-blue: #02295a;
   --purplish-blue: hsl(243, 100%, 62%);
