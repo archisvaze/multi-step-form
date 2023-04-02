@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Nav from './components/Nav';
 import bg_mobile from './assets/images/bg-sidebar-mobile.svg';
-
+import bg_desktop from './assets/images/bg-sidebar-desktop.svg';
 import Step1 from './steps/Step1';
 import Step2 from './steps/Step2';
 import Step3 from './steps/Step3';
@@ -30,73 +30,80 @@ function App() {
                     src={bg_mobile}
                     alt='background'
                 />
-                <div className='mobile-container'>
-                    {step === 1 && (
-                        <Step1
-                            data={data}
-                            setData={setData}
-                        />
-                    )}
-                    {step === 2 && (
-                        <Step2
-                            data={data}
-                            setData={setData}
-                        />
-                    )}
-                    {step === 3 && (
-                        <Step3
-                            data={data}
-                            setData={setData}
-                        />
-                    )}
-                    {step === 4 && (
-                        <Step4
-                            data={data}
-                            setData={setData}
-                            setStep={setStep}
-                        />
-                    )}
-                    {step === 5 && <Step5 />}
-                </div>
-
-                {step < 5 && (
-                    <div className='controls'>
-                        <button
-                            style={{ visibility: step < 2 ? 'hidden' : 'visible' }}
-                            className='back-button'
-                            onClick={() => {
-                                setStep(step - 1);
-                            }}
-                        >
-                            Go back
-                        </button>
-
-                        {step < 4 && (
-                            <button
-                                className='next-button'
-                                onClick={() => {
-                                    setStep(step + 1);
-                                }}
-                                disabled={
-                                    (step === 1 && (!data.step1?.name || !data.step1?.email || !data.step1?.phone)) ||
-                                    (step === 2 && !data.step2?.plan)
-                                }
-                            >
-                                Next Step
-                            </button>
+                <img
+                    className='bg_desktop'
+                    src={bg_desktop}
+                    alt='background'
+                />
+                <div className='mobile-actions-container'>
+                    <div className='mobile-container'>
+                        {step === 1 && (
+                            <Step1
+                                data={data}
+                                setData={setData}
+                            />
+                        )}
+                        {step === 2 && (
+                            <Step2
+                                data={data}
+                                setData={setData}
+                            />
+                        )}
+                        {step === 3 && (
+                            <Step3
+                                data={data}
+                                setData={setData}
+                            />
                         )}
                         {step === 4 && (
+                            <Step4
+                                data={data}
+                                setData={setData}
+                                setStep={setStep}
+                            />
+                        )}
+                        {step === 5 && <Step5 />}
+                    </div>
+
+                    {step < 5 && (
+                        <div className='controls'>
                             <button
-                                className='confirm-button'
+                                style={{ visibility: step < 2 ? 'hidden' : 'visible' }}
+                                className='back-button'
                                 onClick={() => {
-                                    setStep(step + 1);
+                                    setStep(step - 1);
                                 }}
                             >
-                                Confirm
+                                Go back
                             </button>
-                        )}
-                    </div>
-                )}
+
+                            {step < 4 && (
+                                <button
+                                    className='next-button'
+                                    onClick={() => {
+                                        setStep(step + 1);
+                                    }}
+                                    disabled={
+                                        (step === 1 && (!data.step1?.name || !data.step1?.email || !data.step1?.phone)) ||
+                                        (step === 2 && !data.step2?.plan)
+                                    }
+                                >
+                                    Next Step
+                                </button>
+                            )}
+                            {step === 4 && (
+                                <button
+                                    className='confirm-button'
+                                    onClick={() => {
+                                        setStep(step + 1);
+                                    }}
+                                >
+                                    Confirm
+                                </button>
+                            )}
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     );

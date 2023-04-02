@@ -42,13 +42,17 @@ button {
   margin: 0 20px;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 body {
   min-height: 100vh;
   width: 100%;
 }
 
 .app {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
   display: flex;
@@ -57,31 +61,44 @@ body {
 }
 
 .bg_mobile {
+  position: absolute;
   width: 100%;
+  top: 0;
 }
 
 .desktop-container {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--magnolia)
+  background-color: var(--magnolia);
+  position: relative;
 }
 
 .mobile-container {
-  position: absolute;
+  z-index: 2;
   width: 90%;
   background-color: white;
   border-radius: 12px;
-  top: 100px;
   box-shadow: 1px 1px 12px 4px rgba(0, 0, 0, 0.1);
 }
 
+.mobile-actions-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: fit-content;
+  width: 100%;
+  padding-top: 100px;
+  min-height: 100vh;
+  gap: 40px;
+}
+
 .controls {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   background-color: white;
   height: 80px;
@@ -109,6 +126,7 @@ body {
   padding: 24px;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .title {
@@ -177,6 +195,11 @@ body {
   border-radius: 4px;
 }
 
+.selectors-container {
+  display: flex;
+  flex-direction: column;
+}
+
 /* STEP3 */
 .step3-selector input {
   height: 16px;
@@ -197,6 +220,7 @@ body {
 
 .nav-container {
   position: absolute;
+  z-index: 2;
   display: flex;
   gap: 20px;
   top: 30px;
@@ -213,5 +237,107 @@ body {
   font-weight: 500;
 }
 
+.bg_desktop {
+  display: none;
+}
+
+.desktop-nav-info {
+  display: none;
+}
+
 /*Media Querries for desktop*/
-@media screen and (min-width: 900px) {}
+@media screen and (min-width: 920px) {
+  .app {
+    justify-content: center;
+  }
+
+  .mobile-container {
+    box-shadow: none
+  }
+
+  .bg_mobile {
+    display: none;
+  }
+
+  .desktop-container {
+    min-height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color: white;
+    position: relative;
+    width: 80%;
+    height: fit-content;
+    min-width: 900px;
+    max-width: 900px;
+    border-radius: 8px;
+  }
+
+  .bg_desktop {
+    display: flex;
+    margin: 16px;
+  }
+
+  .selectors-container {
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .selectors-container .selector {
+    flex-direction: column;
+    padding: 20px;
+    height: fit-content;
+    width: 33.3%;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    height: 200px;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .nav-container {
+    height: 100%;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .desktop-nav-info {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .controls {
+    background-color: white;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+
+  .mobile-actions-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: fit-content;
+    width: 100%;
+    padding: 0;
+    min-height: fit-content;
+    gap: 0;
+  }
+
+}
