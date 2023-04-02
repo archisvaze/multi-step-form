@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -271,6 +272,7 @@ body {
   .bg_desktop {
     display: flex;
     margin: 16px;
+    width: 274px;
   }
 
   .selectors-container {
