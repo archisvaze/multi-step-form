@@ -20,7 +20,10 @@ function App() {
     return (
         <div className='app'>
             <div className='desktop-container'>
-                <Nav />
+                <Nav
+                    step={step}
+                    setStep={setStep}
+                />
 
                 <img
                     className='bg_mobile'
