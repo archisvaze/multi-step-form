@@ -2,7 +2,7 @@
 
 Link: https://multi-step-form-vite.netlify.app/
 
-![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
+![Screenshot 2023-06-04 at 3 08 16 PM](https://github.com/archisvaze/multi-step-form/assets/92965519/52acd854-5348-4e4b-8d0a-f9e0095ad444)
 
 ## Welcome! 👋
 
